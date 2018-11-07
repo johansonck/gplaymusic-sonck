@@ -17,9 +17,9 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'maven'
 
 group 'com.github.johansonck'
-version '1.0'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
