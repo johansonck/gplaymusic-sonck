@@ -36,3 +36,19 @@ dependencies {
     testImplementation('junit:junit:4.12')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
+
+
+// To specify a license in the pom:
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }
+}
