@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class GPlayMusicApplication {
@@ -14,6 +15,7 @@ public class GPlayMusicApplication {
     }
 
     @Bean
+    @Profile("!test")
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             ZeppaEllaPlaylistCreator zeppaEllaPlaylistCreator = ctx.getBean(ZeppaEllaPlaylistCreator.class);

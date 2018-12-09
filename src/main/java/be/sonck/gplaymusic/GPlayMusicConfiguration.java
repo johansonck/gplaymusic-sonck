@@ -48,7 +48,7 @@ public class GPlayMusicConfiguration {
             return Optional.of(login(TokenProvider.provideToken(token)));
 
         } catch (InitializationException e) {
-            log.warn("Initialization failed", e);
+            log.warn("Initialization with existing token failed", e);
             return Optional.empty();
         }
     }
@@ -58,8 +58,7 @@ public class GPlayMusicConfiguration {
             return Optional.of(login(getNewAuthToken()));
 
         } catch (InitializationException e) {
-            log.error("Initialization failed", e);
-            e.printStackTrace();
+            log.error("Initialization with new token failed", e);
             return Optional.empty();
         }
     }
